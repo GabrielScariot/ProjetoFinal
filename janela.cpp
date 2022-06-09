@@ -27,6 +27,7 @@ Janela::Janela(QWidget *parent) : QMainWindow{parent}
 
 {
     JogoComeco=0;
+    Empate =9;
     this->setGeometry(100,100,800,600);
     this->setWindowTitle("Jogo Da Velha");
 
@@ -108,10 +109,8 @@ void Janela::carregarJogo()
          QMessageBox::warning(this,"ERRO","Um jogo ja esta em andamento");
     }
     catch(char c){
-
-
+        JogoComeco=1;
         QString nomeArquivo = QFileDialog::getOpenFileName(this);
-        int aux1=0,aux2=0;
         char aqr;
         std::fstream f(nomeArquivo.toStdString(), std::fstream::in);
         if(f.is_open()){
@@ -123,9 +122,11 @@ void Janela::carregarJogo()
                     tabuleiro[i]->at(j)->setLugar(aqr);
                     if(tabuleiro[i]->at(j)->getLugar()== 'X'){
                         tabuleiro[i]->at(j)->setImagemX();
+                        Empate--;
                     }
                     if(tabuleiro[i]->at(j)->getLugar()== 'O'){
                         tabuleiro[i]->at(j)->setImagemO();
+                        Empate--;
                     }
                 }
 
