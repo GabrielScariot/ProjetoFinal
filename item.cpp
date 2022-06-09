@@ -14,6 +14,7 @@ void Item::mousePressEvent(QMouseEvent *event) {
 
     void Item::setImagemX(){
             ImagemX = new QImage;
+            //OBS:Alterar o caminho para o da pasta com a imagem
             ImagemX->load("C:/Users/Gabriel/Desktop/JOGODAVELHA/X.png");
             ResizedX = ImagemX->scaled(150,150,Qt::IgnoreAspectRatio);
             this->setPixmap(QPixmap::fromImage(ResizedX));
@@ -22,6 +23,7 @@ void Item::mousePressEvent(QMouseEvent *event) {
     void Item::setImagemO() {
 
             ImagemO = new QImage;
+            //OBS:Alterar o caminho para o da pasta com a imagem
             ImagemO->load("C:/Users/Gabriel/Desktop/JOGODAVELHA/O.png");
             ResizedO = ImagemO->scaled(130,130,Qt::IgnoreAspectRatio);
             this->setPixmap(QPixmap::fromImage(ResizedO));

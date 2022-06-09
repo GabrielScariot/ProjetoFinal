@@ -16,3 +16,8 @@ HEADERS += \
     jogador.h \
     jogadoro.h \
     jogadorx.h
+
+DISTFILES += \
+    O.png \
+    Tabuleiro.jpg \
+    X.png

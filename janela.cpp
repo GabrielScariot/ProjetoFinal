@@ -51,6 +51,7 @@ Janela::Janela(QWidget *parent) : QMainWindow{parent}
     Y->setGeometry(710,0,60,60);
 
     tabuleir = new QImage;
+    //OBS:Alterar o caminho para o da pasta com a imagem
     tabuleir->load("C:/Users/Gabriel/Desktop/Imagem Tictac/Tabuleiro.jpg");
 
     for(int i =0;i<9;i++){
@@ -153,10 +154,13 @@ void Janela::mostraVencedor(){
     if(player=='X'){
         QMessageBox::warning(this,"Vencedor","Vencedor é o O");
         hideLabel();
+        Empate=1;
+
     }
     else if(player=='O'){
         QMessageBox::warning(this,"Vencedor","Vencedor é o X");
         hideLabel();
+        Empate=1;
 
     }}
 
@@ -246,7 +250,7 @@ void Janela::verificaVencedor(){
     if(Empate==0){
         delete PlayerX;
         delete PlayerO;
-         QMessageBox::warning(this,"Deu VEIA","VEIA");
+         QMessageBox::warning(this,"VELHA","DEU VELHA");
          hideLabel();
     }
 
